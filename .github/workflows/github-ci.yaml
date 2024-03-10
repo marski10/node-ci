@@ -1,0 +1,18 @@
+run-name: ci-node
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test-node
+    runs-on: ubuntu: Ubuntu 22.04
+  steps:
+    - name: prepara-ambiente
+      uses: actions/checkout@v4
+      uses: actions/setup-node@v4
+      run: npm install --save-dev jest supertest
+    
+    - name: executa-teste
+      run: npm test
