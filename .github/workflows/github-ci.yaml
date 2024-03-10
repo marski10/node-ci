@@ -8,7 +8,7 @@ on:
 jobs:
   check-application:
     test-node
-      runs-on: ubuntu: Ubuntu 22.04
+      runs-on: ubuntu: ubuntu-22.04
     steps:
       - name: prepara-ambiente
         uses: actions/checkout@v4
