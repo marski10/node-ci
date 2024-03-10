@@ -14,6 +14,10 @@ jobs:
       
       - name: prepara-node
         uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+      
+      - name: instala-dependencia
         run: npm install --save-dev jest supertest
 
       - name: executa-teste
