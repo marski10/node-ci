@@ -11,8 +11,10 @@ jobs:
     steps:
       - name: prepara-ambiente
         uses: actions/checkout@v4
+      
+      - name: prepara-node
         uses: actions/setup-node@v4
         run: npm install --save-dev jest supertest
-      
+
       - name: executa-teste
         run: npm test
