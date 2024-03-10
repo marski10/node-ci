@@ -7,8 +7,7 @@ on:
 
 jobs:
   check-application:
-    test-node
-      runs-on: ubuntu: ubuntu-latest
+    runs-on: ubuntu: ubuntu-latest
     steps:
       - name: prepara-ambiente
         uses: actions/checkout@v4
