@@ -1,4 +1,4 @@
-run-name: ci-node
+name: ci-node
 on:
   pull_request:
     branches:
@@ -6,13 +6,19 @@ on:
       - develop
 
 jobs:
-  test-node
-    runs-on: ubuntu: Ubuntu 22.04
-  steps:
-    - name: prepara-ambiente
-      uses: actions/checkout@v4
-      uses: actions/setup-node@v4
-      run: npm install --save-dev jest supertest
-    
-    - name: executa-teste
-      run: npm test
+  check-application:
+    runs-on: ubuntu-latest
+    steps:
+      - name: prepara-ambiente
+        uses: actions/checkout@v4
+      
+      - name: prepara-node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+      
+      - name: instala-dependencia
+        run: npm install --save-dev jest supertest
+
+      - name: executa-teste
+        run: npm test
